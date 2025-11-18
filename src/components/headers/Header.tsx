@@ -1,9 +1,15 @@
 "use client";
 
 import { DOMAIN_NAME } from "@/libs/constants";
+import { setOpenModal } from "@/redux/slice/auth-slice";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
 
 export default function Header() {
+  const dispatch = useDispatch();
+  const handleLogin = () => {dispatch(setOpenModal('signIn'))};
+  const handleSignUp = () => {dispatch(setOpenModal('signUp'))};
+
   return (
     <header className="w-full bg-white shadow-sm">
       <nav className="max-w-6xl mx-auto flex items-center justify-between p-4">
@@ -20,12 +26,20 @@ export default function Header() {
           <Link href="/blog" className="hover:text-blue-600">Blog</Link>
          
         </div>
-         <Link
-            href="/login"
-            className="px-4 py-2 bg-black text-white rounded hover:bg-blue-700"
-          >
+        <div className="space-x-2">
+         <button
+            onClick={handleLogin}
+            className="px-4 py-2 bg-black text-white rounded hover:bg-gray-700"
+            >
             Login
-          </Link>
+          </button>
+         <button
+            onClick={handleSignUp}
+            className="px-4 py-2 bg-gray-100 text-black rounded hover:bg-gray-200"
+            >
+            Sign Up
+          </button>
+            </div>
       </nav>
     </header>
   );

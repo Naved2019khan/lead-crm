@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { GlobelLayover } from "@/components/Layover/GlobelLayover";
-
+import ReduxProvider from "./ReduxProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"], 
+  weight: ["100", "300", "400", "500", "700", "900"],
   variable: "--font-roboto",
 });
 
@@ -22,11 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} antialiased`}
-      >
-        <GlobelLayover />
-        {children}
+      <body className={`${roboto.variable} antialiased`}>
+        <ReduxProvider>
+          <GlobelLayover />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

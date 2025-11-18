@@ -4,7 +4,6 @@ export const GlobelLayover = () => {
   return (
     <>
     <AuthModal />
-     
     </>
   );
 };

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
     <Header />
-    <div className="flex min-h-screen items-center justify-center  font-sans ">
+    <div className="flex flex-col min-h-screen items-center justify-center  font-sans ">
      <HeroSection />
     </div>
     <Footer />
