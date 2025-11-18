@@ -14,7 +14,7 @@ interface Lead {
   source: string;
   createdAt: string;
   location: string;
-  notes: string;
+   notes: [{ body: string, date: Date }]
 }
 
 export const LeadAction = ({selectedLead}) => {
@@ -121,6 +121,12 @@ const StaticLeadFrom = ({selectedLead,onClose,onEdit}) => {
               {/* Notes Section */}
               <div className="border-t border-gray-200 pt-6">
                 <h5 className="text-sm font-semibold text-gray-900 mb-3">Notes</h5>
+                {selectedLead?.notes?.map((note, index) => (
+                  <div key={index} className="mb-3">
+                    <p className="text-sm text-gray-700 leading-relaxed">{note.body}</p>
+                    <p className="text-xs text-gray-500">{note.date}</p>
+                  </div>
+                ))}
                 {/* <p className="text-sm text-gray-700 leading-relaxed">{selectedLead.notes}</p> */}
               </div>
             </div>
