@@ -11,7 +11,8 @@ export const AuthModal = () =>{
     const dispatch = useDispatch()
     const { openModal } = useSelector((state: any) => state.authSlice);
     const [currentStep,setCurrentStep] = useState(0)
-    const formsUI = [<SignInForm onSwitchToSignUp={()=>setCurrentStep(1)} /> ,<SignUpForm onSwitchToSignIn={()=>setCurrentStep(0)} />]
+    const formsUI = [<SignInForm onSwitchToSignUp={()=>setCurrentStep(1)} /> ,
+    <SignUpForm onSwitchToSignIn={()=>setCurrentStep(0)} />]
 
     useEffect(() => {
         setCurrentStep(modalStates[openModal])

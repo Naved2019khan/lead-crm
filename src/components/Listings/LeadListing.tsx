@@ -28,7 +28,6 @@ const LeadListing = () =>  {
  const [isLoading, setIsLoading] = useState(false);
 
  useEffect(() => {
-
     async function fetchLeads() {
       setIsLoading(true);
       try {
@@ -45,88 +44,6 @@ const LeadListing = () =>  {
     fetchLeads();
     
  },[])
-  //   const leads: Lead[] = [
-  //   {
-  //     id: 1,
-  //     name: 'Sarah Johnson',
-  //     email: 'sarah.j@techcorp.com',
-  //     phone: '+1 (555) 123-4567',
-  //     company: 'TechCorp Industries',
-  //     status: 'new',
-  //     value: '$25,000',
-  //     source: 'Website',
-  //     createdAt: '2024-11-15',
-  //     location: 'San Francisco, CA',
-  //     notes: 'Interested in enterprise plan. Requested demo for next week. Has budget approval for Q4.'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Michael Chen',
-  //     email: 'mchen@innovate.io',
-  //     phone: '+1 (555) 234-5678',
-  //     company: 'Innovate Solutions',
-  //     status: 'contacted',
-  //     value: '$45,000',
-  //     source: 'LinkedIn',
-  //     createdAt: '2024-11-14',
-  //     location: 'New York, NY',
-  //     notes: 'Follow-up scheduled for next Monday. Very interested in custom integration options.'
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Emily Rodriguez',
-  //     email: 'emily.r@startuphub.com',
-  //     phone: '+1 (555) 345-6789',
-  //     company: 'StartupHub',
-  //     status: 'qualified',
-  //     value: '$15,000',
-  //     source: 'Referral',
-  //     createdAt: '2024-11-13',
-  //     location: 'Austin, TX',
-  //     notes: 'Ready to move forward. Waiting for contract review from legal team.'
-  //   },
-  //   {
-  //     id: 4,
-  //     name: 'David Kim',
-  //     email: 'david.kim@globaltech.com',
-  //     phone: '+1 (555) 456-7890',
-  //     company: 'Global Tech Ltd',
-  //     status: 'contacted',
-  //     value: '$60,000',
-  //     source: 'Conference',
-  //     createdAt: '2024-11-12',
-  //     location: 'Seattle, WA',
-  //     notes: 'Met at TechSummit 2024. Needs solution for team of 50+ users.'
-  //   },
-  //   {
-  //     id: 5,
-  //     name: 'Lisa Anderson',
-  //     email: 'l.anderson@digitalpro.com',
-  //     phone: '+1 (555) 567-8901',
-  //     company: 'Digital Pro Agency',
-  //     status: 'new',
-  //     value: '$12,000',
-  //     source: 'Google Ads',
-  //     createdAt: '2024-11-11',
-  //     location: 'Miami, FL',
-  //     notes: 'Small agency looking for scalable solution. Price sensitive.'
-  //   },
-  //   {
-  //     id: 6,
-  //     name: 'James Wilson',
-  //     email: 'jwilson@enterprise.co',
-  //     phone: '+1 (555) 678-9012',
-  //     company: 'Enterprise Co',
-  //     status: 'lost',
-  //     value: '$35,000',
-  //     source: 'Cold Email',
-  //     createdAt: '2024-11-10',
-  //     location: 'Boston, MA',
-  //     notes: 'Chose competitor. Price was main concern. Follow up in 6 months.'
-  //   }
-  // ];
-
-
 
   const getStatusColor = (status: Lead['status']) => {
     const colors = {
