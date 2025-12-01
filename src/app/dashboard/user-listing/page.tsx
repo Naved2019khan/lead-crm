@@ -1,5 +1,5 @@
 "use client"
-import { Table } from "@/components/Listings/UserListing";
+import { Table } from "@/components/listing/UserListing";
 import { useState } from "react";
 
 interface User {

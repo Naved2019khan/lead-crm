@@ -4,7 +4,7 @@ import { Eye} from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Modal } from '../modal/Modal';
 import EditLeadFrom from '../form/EditLeadFrom';
-import { getAllLeads } from '@/utils/api/crm';
+import { getAllLeads } from '@/services/api/crm';
 
 interface Lead {
   id: number;

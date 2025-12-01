@@ -1,6 +1,5 @@
-import React from 'react'
-import { SelectionGrid } from '@/components/Listings/SelectionGrid';
 import { Heading } from '@/components/ui/Heading';
+import { ProductGrid } from '@/components/grid/ProductGrid';
 interface Site {
   id: string;
   name: string;
@@ -20,7 +19,7 @@ function Page({}) {
   return (
     <div className='mx-12 mt-4'>
       <Heading level="h2" align="left" subtitle='Flight Lead Section'>Flight Sites</Heading>
-      <SelectionGrid sites={sampleSites}/></div>
+      <ProductGrid sites={sampleSites}/></div>
   )
 }
 

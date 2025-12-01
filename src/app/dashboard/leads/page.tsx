@@ -1,4 +1,4 @@
-import LeadListing from '@/components/Listings/LeadListing';
+import LeadListing from '@/components/listing/LeadListing';
 import React from 'react';
 
 
