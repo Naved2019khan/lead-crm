@@ -1,6 +1,6 @@
 "use client"
 import { Alert } from "@/components/popup/Alert";
-import { signUpNetworkCall } from "@/utils/api/auth";
+import { signUpNetworkCall } from "@/services/api/auth-api.ts";
 import { signUpFormValidator } from "@/utils/validator/signUpFormValidator";
 import { useState } from "react";
 

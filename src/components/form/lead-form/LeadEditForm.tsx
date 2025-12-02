@@ -9,7 +9,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { dateForPicker } from "@/libs/date";
-import { updateLead } from "@/utils/api/crm";
+import { updateLead } from "@/services/api/agency-api";
 import SuccessCard from "@/components/card/SuccessCard";
 
 export const LeadEditForm = ({ selectedLead, onClose, onEdit }) => {

@@ -1,4 +1,4 @@
-import { signInNetworkCall } from "@/utils/api/auth";
+import { signInNetworkCall } from "@/services/api/auth-api";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import "dotenv/config";   // ← this loads .env.local automatically

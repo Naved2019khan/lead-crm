@@ -1,10 +1,11 @@
 "use client";
 import { Eye } from "lucide-react";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import { Modal } from "../ui/Modal";
-import { LeadAction } from "../form/lead-form/LeadActionForm";
-import { getAllLeads } from "@/utils/api/crm";
+import { getAllLeads } from '@/services/api/crm';
+import LeadAction from "../form/lead-form/LeadActionForm";
+import { updateSiteAction } from "@/app/actions/updateSiteAction";
 
 interface Lead {
   id: number;
@@ -20,31 +21,32 @@ interface Lead {
   notes: string;
 }
 
-const LeadListing = () => {
+const LeadListing = ({leads}) => {
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
-  const [leads, setLead] = useState<Lead[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [leads, setLead] = useState<Lead[]>([]);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const handleCloseModal = () => {
-    fetchLeads();
+    // fetchLeads();
+    updateSiteAction()
     setSelectedLead(null);
   };
 
-  async function fetchLeads() {
-    setIsLoading(true);
-    try {
-      const leads = await getAllLeads();
-      setLead(leads?.leads);
-    } catch (error) {
-      console.error("Error fetching leads:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  }
+  // async function fetchLeads() {
+  //   setIsLoading(true);
+  //   try {
+  //     const leads = await getAllLeads();
+  //     setLead(leads?.leads);
+  //   } catch (error) {
+  //     console.error("Error fetching leads:", error);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchLeads();
-  }, []);
+  // useEffect(() => {
+  //   fetchLeads();
+  // }, []);
 
   const getStatusColor = (status: Lead["status"]) => {
     const colors = {
@@ -56,8 +58,8 @@ const LeadListing = () => {
     return colors[status];
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  if (!leads?.length) {
+    return <div>No leads found</div>;
   }
 
   return (

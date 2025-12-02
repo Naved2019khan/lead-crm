@@ -1,5 +1,4 @@
 import { Alert } from "@/components/popup/Alert";
-import { signInNetworkCall } from "@/utils/api/auth";
 import { signInFormValidator } from "@/utils/validator/signInFormValidator";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
