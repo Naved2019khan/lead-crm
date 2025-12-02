@@ -27,7 +27,7 @@ export default function ProfileDropdown({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleLogout = () => {
+    const handleLogout = () => {
     console.log('Logging out...');
     // Add your logout logic here
     setIsOpen(false);

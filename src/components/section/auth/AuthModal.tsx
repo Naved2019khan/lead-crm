@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import SignInForm from "./SignInForm";
 import { SignUpForm } from "./SignUpForm";
-import { Modal } from "@/components/modal/Modal";
+import { Modal } from "@/components/ui/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpenModal } from "@/redux/slice/auth-slice";
 const modalStates = { signIn: 0, signUp: 1 };
