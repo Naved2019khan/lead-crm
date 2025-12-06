@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Check } from 'lucide-react';
 
-export const Dropdown = ({ options, value, onChange, placeholder = "Select an option" }) => {
+export const Dropdown = ({ options,label, value, onChange, placeholder = "Select an option" }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -20,8 +20,10 @@ export const Dropdown = ({ options, value, onChange, placeholder = "Select an op
   const selectedOption = options.find(opt => opt.value === value);
 
   return (
-    <div ref={dropdownRef} className="relative w-64">
+    <div ref={dropdownRef} className="relative w-full">
+      {label && <label className="block text-sm mb-2 font-medium text-gray-700">{label}</label>}
       <button
+        type='button'
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-4 py-2.5 bg-white border border-gray-200 rounded-lg flex items-center justify-between hover:border-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
       >
@@ -39,6 +41,7 @@ export const Dropdown = ({ options, value, onChange, placeholder = "Select an op
           <div className="max-h-60 overflow-y-auto">
             {options.map((option) => (
               <button
+               type='button'
                 key={option.value}
                 onClick={() => {
                   onChange(option.value);
